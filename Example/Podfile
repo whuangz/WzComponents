@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WzComponents_Example' do
+  pod 'WzComponents', :path => '../'
+
+  target 'WzComponents_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
