@@ -1,0 +1,6 @@
+framework module WzComponents {
+  umbrella header "WzComponents-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - WzComponents (0.1.0)
+
+DEPENDENCIES:
+  - WzComponents (from `../`)
+
+EXTERNAL SOURCES:
+  WzComponents:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WzComponents: 7da83eef613191e561f8504e127e7c7594e2fa6d
+
+PODFILE CHECKSUM: 730f53425bcb00d0be9942724dae7cecd7bccd28
+
+COCOAPODS: 1.5.3

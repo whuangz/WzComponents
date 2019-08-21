@@ -1,0 +1,22 @@
+{
+  "name": "WzComponents",
+  "version": "0.1.0",
+  "summary": "A short description of WzComponents.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/whuangz/WzComponents",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "whuangz": "william@parentstory.com"
+  },
+  "source": {
+    "git": "https://github.com/whuangz/WzComponents.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WzComponents/Classes/**/*"
+}

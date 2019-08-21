@@ -1,0 +1,6 @@
+framework module Pods_WzComponents_Tests {
+  umbrella header "Pods-WzComponents_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

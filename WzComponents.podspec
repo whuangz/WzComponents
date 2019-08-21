@@ -24,13 +24,17 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/whuangz/WzComponents'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'whuangz' => 'william@parentstory.com' }
+  s.author           = { 'whuangz' => 'n.hua.drt@gmail.com' }
   s.source           = { :git => 'https://github.com/whuangz/WzComponents.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'WzComponents/Classes/**/*'
+  s.source_files = 'Source/**/*.swift'
+  s.swift_version = '4.0'
+  s.platforms = {
+      "ios": "9.0"
+  }
   
   # s.resource_bundles = {
   #   'WzComponents' => ['WzComponents/Assets/*.png']
