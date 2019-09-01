@@ -20,7 +20,7 @@ class WzBottomSheetController: UIViewController {
     
     convenience init(view: AnyObject, bottomSheetHeight: CGFloat) {
         self.init(nibName: nil, bundle: nil)
-        self.modalPresentationStyle = .overFullScreen
+        self.modalPresentationStyle = .overCurrentContext
         self.modalTransitionStyle = .flipHorizontal
         
         self.sheetHeight = bottomSheetHeight
@@ -32,14 +32,17 @@ class WzBottomSheetController: UIViewController {
         self.view.backgroundColor = defaultBgColor()
         self.prepareUI()
         self.setupGestures()
-        self.setupBottomSheet()
         self.setupInitialBottomSheet()
     }
     
-    private func setupBottomSheet(){
+    
+    private func setupInitialBottomSheet(){
         if let contentView = self.contentView{
             self.setViewWith(contentView)
         }
+        
+        self.sheetContainerBottomConstraint?.constant = self.getBottomSheetContainerHeight()
+        self.perform(#selector(self.presentBottomSheet), with: nil, afterDelay: 0.1)
     }
     
     func setViewWith(_ anyView: AnyObject){
@@ -50,7 +53,7 @@ class WzBottomSheetController: UIViewController {
             if let vc = anyView as? UIViewController {
                 self.sheetContentView.backgroundColor = vc.view.backgroundColor
                 vc.view.addTo(parentView: self.sheetContentView)
-                vc.didMove(toParentViewController: self)
+                vc.didMove(toParent: self)
             }
         }else if anyView is UIView {
             if let view = anyView as? UIView {
@@ -102,11 +105,6 @@ extension WzBottomSheetController {
         if self.sheetContentView.subviews.count != 0 {
             self.sheetContentView.removeSubViews()
         }
-    }
-    
-    func setupInitialBottomSheet(){
-        self.sheetContainerBottomConstraint?.constant = self.getBottomSheetContainerHeight()
-        self.perform(#selector(self.presentBottomSheet), with: nil, afterDelay: 0.1)
     }
     
     
@@ -231,7 +229,7 @@ class WzSheetNavigationView: UIView{
         
         bgPath.append(hollowPath)
         maskLayer.path = bgPath.cgPath
-        maskLayer.fillRule = kCAFillRuleEvenOdd
+        maskLayer.fillRule = .evenOdd
         return maskLayer
     }
 }

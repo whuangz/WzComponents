@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    public func constraintWithVisualFormat(_ format: String, views: UIView..., options: NSLayoutFormatOptions = NSLayoutFormatOptions() ){
+    public func constraintWithVisualFormat(_ format: String, views: UIView..., options: NSLayoutConstraint.FormatOptions = NSLayoutConstraint.FormatOptions()  ){
         var viewToDictionary = [String:UIView]()
         for (index, view) in views.enumerated() {
             let key = "v\(index)"
