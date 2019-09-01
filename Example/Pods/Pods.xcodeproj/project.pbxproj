@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		33F0CE566DC541F6F96FFDFDD0F37A3B /* Pods-WzComponents_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B46E77477AA3643374AC1A6A61CEA19 /* Pods-WzComponents_Example-dummy.m */; };
+		3C923B34230E851B000125AD /* WzAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C923B33230E851B000125AD /* WzAlertController.swift */; };
+		3C9C4204231BA21500AE97CD /* WzBottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C4203231BA21500AE97CD /* WzBottomSheetController.swift */; };
 		3CE5D9C4230D88ED0066DCD8 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D9C3230D88ED0066DCD8 /* UIColor+Helpers.swift */; };
 		3CE5D9C6230D899A0066DCD8 /* UIView+Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D9C5230D899A0066DCD8 /* UIView+Layouts.swift */; };
 		3F5AE62F266E381ADBA80B8CAA864851 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
@@ -45,6 +47,9 @@
 		2B46E77477AA3643374AC1A6A61CEA19 /* Pods-WzComponents_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WzComponents_Example-dummy.m"; sourceTree = "<group>"; };
 		2E107AC3F5355A39EE9058BA6A164C09 /* Pods-WzComponents_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WzComponents_Tests-dummy.m"; sourceTree = "<group>"; };
 		348146C6B8405D30BE4827F3DFE16855 /* Pods-WzComponents_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WzComponents_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3C923B33230E851B000125AD /* WzAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WzAlertController.swift; sourceTree = "<group>"; };
+		3C923B35230E853A000125AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3C9C4203231BA21500AE97CD /* WzBottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WzBottomSheetController.swift; sourceTree = "<group>"; };
 		3CD175140FB4617E5A5A1E01C3386CDE /* Pods-WzComponents_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WzComponents_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3CE5D9C3230D88ED0066DCD8 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		3CE5D9C5230D899A0066DCD8 /* UIView+Layouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layouts.swift"; sourceTree = "<group>"; };
@@ -152,9 +157,27 @@
 		3C040FE2230D9DB6006AB66B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3C923B32230E82A9000125AD /* Controllers */,
+				3C040FE3230DA0A5006AB66B /* List */,
 				3CE5D9BC230D87AC0066DCD8 /* Extension */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		3C040FE3230DA0A5006AB66B /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3C923B32230E82A9000125AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C923B33230E851B000125AD /* WzAlertController.swift */,
+				3C9C4203231BA21500AE97CD /* WzBottomSheetController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3CE5D9BC230D87AC0066DCD8 /* Extension */ = {
@@ -231,6 +254,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C923B35230E853A000125AD /* UIKit.framework */,
 				44D5347904CF754D6785B84253F2574A /* iOS */,
 			);
 			name = Frameworks;
@@ -409,6 +433,8 @@
 				46E5369733FFBC38D063346208DB4E4F /* WzComponents-dummy.m in Sources */,
 				3CE5D9C4230D88ED0066DCD8 /* UIColor+Helpers.swift in Sources */,
 				3CE5D9C6230D899A0066DCD8 /* UIView+Layouts.swift in Sources */,
+				3C9C4204231BA21500AE97CD /* WzBottomSheetController.swift in Sources */,
+				3C923B34230E851B000125AD /* WzAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

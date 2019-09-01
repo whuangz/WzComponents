@@ -20,7 +20,8 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: options , metrics: nil, views: viewToDictionary))
     }
     
-    public func constraintWith(size: CGSize = .zero , eqWidth: NSLayoutDimension? = nil, eqHeight: NSLayoutDimension? = nil, widthMultiplier: CGFloat = 1, heightMultiplier: CGFloat = 1, layoutType: LayoutDimensionType? = LayoutDimensionType.equal) {
+    @discardableResult
+    public func constraintWith(size: CGSize = .zero , eqWidth: NSLayoutDimension? = nil, eqHeight: NSLayoutDimension? = nil, widthMultiplier: CGFloat = 1, heightMultiplier: CGFloat = 1, layoutType: LayoutDimensionType? = LayoutDimensionType.equal) -> [NSLayoutConstraint] {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,10 +79,12 @@ extension UIView {
         }
         
         _ = toActivatedConstraints.forEach({$0.isActive = true})
+        return toActivatedConstraints
         
     }
     
-    public func constraintWith(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero) {
+    @discardableResult
+    public func constraintWith(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -95,15 +98,17 @@ extension UIView {
             toActivatedConstraints.append(leftAnchor.constraint(equalTo: left, constant: padding.left))
         }
         
-        if let right = right {
-            toActivatedConstraints.append(rightAnchor.constraint(equalTo: right, constant: -padding.right))
-        }
-        
         if let bottom = bottom {
             toActivatedConstraints.append(bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom))
         }
         
+        if let right = right {
+            toActivatedConstraints.append(rightAnchor.constraint(equalTo: right, constant: -padding.right))
+        }
+        
         _ = toActivatedConstraints.forEach({$0.isActive = true})
+        
+        return toActivatedConstraints
         
     }
     
@@ -118,6 +123,8 @@ extension UIView {
             if let superview = self.superview?.safeAreaLayoutGuide{
                 self.constraintWith(superview.topAnchor, left: superview.leftAnchor, bottom: superview.bottomAnchor, right: superview.rightAnchor)
             }
+        }else{
+            self.constraintToFillSuperView()
         }
     }
     
@@ -142,6 +149,17 @@ extension UIView {
     public func constraintCenterToSuperView() {
         self.constraintCenterX()
         self.constraintCenterY()
+    }
+    
+    public func addTo(parentView: UIView){
+        parentView.addSubview(self)
+        self.constraintToFillSuperView()
+    }
+    
+    public func removeSubViews(){
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
     }
     
 }
