@@ -22,7 +22,7 @@ pod 'WzComponents'
 
 ## Author
 
-whuangz, william@parentstory.com
+whuangz, n.hua.drt@gmail.com
 
 ## License
 
