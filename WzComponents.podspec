@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'Source/**/*.swift'
-  s.swift_version = '4.2
+  s.swift_version = '4.2'
   s.platforms = {
       "ios": "9.0"
   }
