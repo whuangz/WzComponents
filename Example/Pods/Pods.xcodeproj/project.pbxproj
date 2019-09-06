@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33F0CE566DC541F6F96FFDFDD0F37A3B /* Pods-WzComponents_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B46E77477AA3643374AC1A6A61CEA19 /* Pods-WzComponents_Example-dummy.m */; };
+		3C0187BC23224606006844ED /* WzPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0187BB23224606006844ED /* WzPageControl.swift */; };
 		3C923B34230E851B000125AD /* WzAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C923B33230E851B000125AD /* WzAlertController.swift */; };
 		3C9C4204231BA21500AE97CD /* WzBottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C4203231BA21500AE97CD /* WzBottomSheetController.swift */; };
 		3CE5D9C4230D88ED0066DCD8 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5D9C3230D88ED0066DCD8 /* UIColor+Helpers.swift */; };
@@ -47,6 +48,7 @@
 		2B46E77477AA3643374AC1A6A61CEA19 /* Pods-WzComponents_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WzComponents_Example-dummy.m"; sourceTree = "<group>"; };
 		2E107AC3F5355A39EE9058BA6A164C09 /* Pods-WzComponents_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WzComponents_Tests-dummy.m"; sourceTree = "<group>"; };
 		348146C6B8405D30BE4827F3DFE16855 /* Pods-WzComponents_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WzComponents_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3C0187BB23224606006844ED /* WzPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WzPageControl.swift; sourceTree = "<group>"; };
 		3C923B33230E851B000125AD /* WzAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WzAlertController.swift; sourceTree = "<group>"; };
 		3C923B35230E853A000125AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3C9C4203231BA21500AE97CD /* WzBottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WzBottomSheetController.swift; sourceTree = "<group>"; };
@@ -154,9 +156,18 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		3C0187BA232245F9006844ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C0187BB23224606006844ED /* WzPageControl.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3C040FE2230D9DB6006AB66B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3C0187BA232245F9006844ED /* View */,
 				3C923B32230E82A9000125AD /* Controllers */,
 				3C040FE3230DA0A5006AB66B /* List */,
 				3CE5D9BC230D87AC0066DCD8 /* Extension */,
@@ -366,7 +377,9 @@
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					85958531E057762263B8D687FB8238C6 = {
+						DevelopmentTeam = 9T94R4M552;
 						LastSwiftMigration = 1030;
+						ProvisioningStyle = Automatic;
 					};
 					B89610CA01ED2A9AB6EED08697F71F0F = {
 						LastSwiftMigration = 1030;
@@ -431,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E5369733FFBC38D063346208DB4E4F /* WzComponents-dummy.m in Sources */,
+				3C0187BC23224606006844ED /* WzPageControl.swift in Sources */,
 				3CE5D9C4230D88ED0066DCD8 /* UIColor+Helpers.swift in Sources */,
 				3CE5D9C6230D899A0066DCD8 /* UIView+Layouts.swift in Sources */,
 				3C9C4204231BA21500AE97CD /* WzBottomSheetController.swift in Sources */,
@@ -469,12 +483,14 @@
 			baseConfigurationReference = 56F0863F16A49EB169537ED74D58E174 /* WzComponents.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9T94R4M552;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -486,6 +502,7 @@
 				MODULEMAP_FILE = "Target Support Files/WzComponents/WzComponents.modulemap";
 				PRODUCT_MODULE_NAME = WzComponents;
 				PRODUCT_NAME = WzComponents;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -538,12 +555,14 @@
 			baseConfigurationReference = 56F0863F16A49EB169537ED74D58E174 /* WzComponents.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9T94R4M552;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -555,6 +574,7 @@
 				MODULEMAP_FILE = "Target Support Files/WzComponents/WzComponents.modulemap";
 				PRODUCT_MODULE_NAME = WzComponents;
 				PRODUCT_NAME = WzComponents;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
